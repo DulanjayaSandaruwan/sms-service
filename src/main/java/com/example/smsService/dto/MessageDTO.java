@@ -18,8 +18,7 @@ public class MessageDTO {
        @NoArgsConstructor
        @Getter
        public static class Response {
-              private  String message;
-              private  String serviceProvider;
+              private  String status;
               private  String mobileNumber;
        }
 }

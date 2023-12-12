@@ -8,9 +8,10 @@ import org.springframework.stereotype.Service;
 public class SmsServiceProviderService {
 
        public MessageDTO.Response getServiceProvider(MessageDTO messageDTO) throws Exception {
+           String serviceProvider = ServiceProvider.getServiceProviderForMobilePrefix(messageDTO.getMobileNumber()).name();
+           System.out.println("Service : " + serviceProvider + " Message : " + messageDTO.getMessage());
            return new MessageDTO.Response(
-                   messageDTO.getMessage(),
-                   ServiceProvider.getServiceProviderForMobilePrefix(messageDTO.getMobileNumber()).name(),
+                   "message sent",
                    messageDTO.getMobileNumber()
            );
        }
